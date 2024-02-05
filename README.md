@@ -32,11 +32,12 @@ async fn main() -> anyhow::Result<()> {
 
 ## Contributing
 PR's are definitely welcome. Feautres that could be nice:
-[ ] UDPAssociate 
-[ ] Bind
-[ ] More than username/password authentication
-[ ] Better argument handling
-[ ] Generic impl for the server (don't hardcode TcpStream, but use Tokio's
+
+- [ ] UDPAssociate 
+- [ ] Bind
+- [ ] More than username/password authentication
+- [ ] Better argument handling
+- [ ] Generic impl for the server (don't hardcode TcpStream, but use Tokio's
 AsyncRead/WriteExt as a trait bound)
 
 ## Credits
