@@ -179,6 +179,8 @@ impl Socks5Server {
                         log::warn!("Error closing TcpStream: {:?}", e);
                     }
                 }
+                log::info!("Shutting down client connection: {client_addr:?}");
+                let _ = client.shutdown().await;
             });
         }
     }
@@ -343,7 +345,10 @@ impl<'a> SocksConnection<'a> {
                 let mut stream_b = self.stream.lock().await;
                 match tokio::io::copy_bidirectional(&mut *stream_b, &mut conn).await {
                     Err(_e) => Err(SocksHandleError::FailedRelay)?,
-                    Ok((_cli_to_serv, serv_to_up)) => Ok(serv_to_up as usize),
+                    Ok((_cli_to_serv, serv_to_up)) => {
+                        let _ = conn.shutdown().await;
+                        Ok(serv_to_up as usize)
+                    }
                 }
             }
             SocksCommand::Bind => {
