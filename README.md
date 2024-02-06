@@ -69,7 +69,7 @@ PR's are definitely welcome. Feautres that could be nice:
 AsyncRead/WriteExt as a trait bound)
 
 ## Credits
-I sought some help from merino (probably? the first SOCKS5 implementation in Rust) that
+I sought some help from merino (another SOCKS5 implementation in Rust) that
 can be found [here](https://github.com/ajmwagar/merino/tree/master). The design
 is roughly the same with some tweaks here or there that I added. The 'additions'
 that I added are probably not correct or industry standard, but gave it my best
