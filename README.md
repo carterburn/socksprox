@@ -1,6 +1,8 @@
 # socksprox
 Simple SOCKS5 Proxy Server in Rust. Probably shouldn't use this, but you can.
 
+[Install Instructions](#Install)
+
 A super simple, feature-lacking async SOCKS5 server.
 Currently only supports the CONNECT command (TCP) and limited authentication
 (Username/Password). No authentication is also supported.
@@ -29,6 +31,32 @@ async fn main() -> anyhow::Result<()> {
     Ok(())
 }
 ```
+
+## Install
+Add the library to your project to be able to quickly add a Socks5 proxy to your
+existing code with:
+
+```bash
+cargo add socksprox
+```
+
+If you want to run the provided binary, use `cargo` to install it:
+
+```bash
+cargo install socksprox
+```
+
+To build from source (which you technically do with `cargo install`):
+
+```bash
+git clone https://github.com/carterburn/socksprox.git
+cd socksprox
+cargo build --release
+```
+
+Compiling for different OS / architectures can be done using standard `cargo`
+arguments if you have the requisite Rust toolchain installed.
+
 
 ## Contributing
 PR's are definitely welcome. Feautres that could be nice:
