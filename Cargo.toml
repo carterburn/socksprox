@@ -1,6 +1,6 @@
 [package]
 name = "socksprox"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Simple SOCKS5 Proxy Server in Rust. Probably shouldn't use this, but you can."
 license = "MIT"

@@ -18,6 +18,7 @@ use socks_msgs::{
 };
 
 #[derive(Clone, Debug, PartialEq)]
+/// Simple wrapper around a SocksUser with a username / password.
 pub struct SocksUser {
     pub username: String,
     password: String,
@@ -25,6 +26,7 @@ pub struct SocksUser {
 // Maybe some serde JSON for the username/password
 
 impl SocksUser {
+    /// Create a new SocksUser with the provided username and password.
     pub fn new(username: String, password: String) -> Self {
         Self { username, password }
     }

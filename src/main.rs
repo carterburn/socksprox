@@ -53,8 +53,6 @@ async fn main() -> anyhow::Result<()> {
         None
     };
 
-    println!("{users:?}\n{timeout:?}");
-
     let mut s = match Socks5Server::new(&ip, port, users, timeout).await {
         Ok(s) => s,
         Err(e) => {
